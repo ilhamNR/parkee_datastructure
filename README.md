@@ -8,7 +8,7 @@ Dibuat Menggunakan Apache Netbeans 22 (JDK-22) dan Gradle
 
 - **Node.java**: Definisi kelas `Node` yang merepresentasikan setiap node dalam linked list.
 - **SingleLinkedList.java**: Definisi kelas `SingleLinkedList` yang mengelola operasi-operasi pada linked list.
-- **Main.java**: Contoh penggunaan dari linked list dengan interaksi pengguna melalui konsol.
+- **App.java**: Contoh penggunaan dari linked list dengan interaksi pengguna melalui konsol.
 
 ## Operasi yang Tersedia
 
@@ -20,7 +20,7 @@ Dibuat Menggunakan Apache Netbeans 22 (JDK-22) dan Gradle
 ## Cara Menggunakan
 
 1. Pastikan Anda memiliki Java Development Kit (JDK) terinstal.
-2. Jalankan `Main.java` untuk menguji implementasi linked list.
+2. Jalankan `App.java` untuk menguji implementasi linked list.
 3. Pilih opsi yang tersedia dari menu untuk melakukan operasi yang diinginkan pada linked list.
 
 ### Contoh Penggunaan
