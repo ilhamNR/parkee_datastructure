@@ -25,7 +25,7 @@ Dibuat Menggunakan Apache Netbeans 22 (JDK-22) dan Gradle
 
 ```bash
 $ javac App.java       # Compile program
-$ java Main             # Jalankan program
+$ java App            # Jalankan program
 
 Menu:
 1. Masukkan di akhir
