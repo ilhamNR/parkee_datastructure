@@ -2,6 +2,8 @@
 
 Implementasi dari single linked list menggunakan Java tanpa menggunakan library List bawaan. Kode ini mencakup kelas `Node` dan `SingleLinkedList` untuk mengelola operasi dasar pada linked list.
 
+Dibuat Menggunakan Apache Netbeans 22 (JDK-22) dan Gradle
+
 ## Struktur Proyek
 
 - **Node.java**: Definisi kelas `Node` yang merepresentasikan setiap node dalam linked list.
@@ -24,7 +26,7 @@ Implementasi dari single linked list menggunakan Java tanpa menggunakan library 
 ### Contoh Penggunaan
 
 ```bash
-$ javac Main.java       # Compile program
+$ javac App.java       # Compile program
 $ java Main             # Jalankan program
 
 Menu:
