@@ -3,12 +3,129 @@
  */
 package com.parkee.datastructure;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
+import java.util.Scanner;
+
+// Kelas Node untuk setiap node dalam linked list
+class Node {
+    int data;
+    Node next;
+
+    // Konstruktor untuk menginisialisasi node baru dengan data yang diberikan
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+// Kelas SingleLinkedList untuk mengelola operasi-operasi pada linked list
+class SingleLinkedList {
+    Node head; // Kepala dari linked list
+
+    // Konstruktor untuk menginisialisasi linked list kosong
+    SingleLinkedList() {
+        this.head = null;
     }
 
+    // Metode untuk memasukkan node baru di akhir linked list
+    public void insertAtEnd(int data) {
+        Node newNode = new Node(data); // Buat node baru dengan data yang diberikan
+        if (head == null) {
+            head = newNode; // Jika list kosong, jadikan node baru sebagai kepala
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next; // Telusuri hingga akhir list
+            }
+            current.next = newNode; // Sambungkan node baru di akhir
+        }
+    }
+
+    // Metode untuk memasukkan node baru di awal linked list
+    public void insertAtBeginning(int data) {
+        Node newNode = new Node(data); // Buat node baru dengan data yang diberikan
+        newNode.next = head; // Sambungkan node baru ke kepala saat ini
+        head = newNode; // Jadikan node baru sebagai kepala baru
+    }
+
+    // Metode untuk menghapus kemunculan pertama node dengan data yang diberikan
+    public void deleteByValue(int data) {
+        if (head == null) {
+            System.out.println("List kosong. Tidak ada yang bisa dihapus.");
+            return;
+        }
+        if (head.data == data) {
+            head = head.next; // Jika node kepala sendiri memiliki data, pindahkan kepala ke node berikutnya
+            return;
+        }
+        Node current = head;
+        while (current.next != null) {
+            if (current.next.data == data) {
+                current.next = current.next.next; // Hapus node dengan melompati node tersebut
+                return;
+            }
+            current = current.next;
+        }
+        System.out.println("Elemen dengan nilai " + data + " tidak ditemukan dalam list.");
+    }
+
+    // Metode untuk menampilkan semua elemen dalam linked list
+    public void display() {
+        if (head == null) {
+            System.out.println("List kosong.");
+            return;
+        }
+        Node current = head;
+        System.out.print("Linked List: ");
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+}
+// Fungsi Main
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Scanner scanner = new Scanner(System.in);
+        SingleLinkedList myList = new SingleLinkedList();
+        int choice, data;
+
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Masukkan di akhir");
+            System.out.println("2. Masukkan di awal");
+            System.out.println("3. Hapus berdasarkan nilai");
+            System.out.println("4. Tampilkan list");
+            System.out.println("5. Keluar");
+            System.out.print("Masukkan pilihan Anda: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Masukkan data untuk dimasukkan di akhir: ");
+                    data = scanner.nextInt();
+                    myList.insertAtEnd(data);
+                    break;
+                case 2:
+                    System.out.print("Masukkan data untuk dimasukkan di awal: ");
+                    data = scanner.nextInt();
+                    myList.insertAtBeginning(data);
+                    break;
+                case 3:
+                    System.out.print("Masukkan data untuk dihapus: ");
+                    data = scanner.nextInt();
+                    myList.deleteByValue(data);
+                    break;
+                case 4:
+                    myList.display();
+                    break;
+                case 5:
+                    System.out.println("Keluar...");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Pilihan tidak valid! Silakan coba lagi.");
+            }
+        }
     }
 }
