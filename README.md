@@ -6,9 +6,7 @@ Dibuat Menggunakan Apache Netbeans 22 (JDK-22) dan Gradle
 
 ## Struktur Proyek
 
-- **Node.java**: Definisi kelas `Node` yang merepresentasikan setiap node dalam linked list.
-- **SingleLinkedList.java**: Definisi kelas `SingleLinkedList` yang mengelola operasi-operasi pada linked list.
-- **App.java**: Contoh penggunaan dari linked list dengan interaksi pengguna melalui konsol.
+- **App.java**: Contoh penggunaan dari linked list dengan interaksi pengguna melalui konsol, termasuk dengan kelas `Node` yang merepresentasikan setiap node dalam linked list dan kelas `SingleLinkedList` yang mengelola operasi-operasi pada linked list.
 
 ## Operasi yang Tersedia
 
